@@ -171,7 +171,7 @@ spirit.credslist = document.getElementById('credits').
 spirit.creds = function(){
   spirit.now -= 2;
   spirit.credslist.style.marginTop = spirit.now+'px';
-  if(spirit.now > -210){
+  if(spirit.now > -300){
     setTimeout(spirit.creds,50);
   }
 };
