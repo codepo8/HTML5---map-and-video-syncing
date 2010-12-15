@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Animated Google Maps path synced with HTML5 video</title>
+<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<link  href="http://fonts.googleapis.com/css?family=Lobster:regular" rel="stylesheet" type="text/css">
+<link  href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="boundary">
+  <header><h1>Spirit of <span>Indiana</span></h1></header>
+  <div id="stage">
+    <div id="credits">
+      <ul>
+        <li><span class="j">Code:</span><span>Chris Heilmann</span></li>
+        <li><span class="j">Design:</span><span>Steven Spielberg</span></li>
+        <li><span class="j">Power:</span><span>HTML5 and the Open Web</span></li>
+        <li><span class="j">Music:</span><span>Mozilla All Stars</span></li>
+        <li><span class="j">Video:</span><span>Archive.org</span></li>
+        <li><span class="j">Maps:</span><span>Google Maps</span></li>
+        <li class="last">Fin</li>
+      </ul>
+    </div>
+  <div id="mapcanvas"></div>
+  <video poster="poster.jpg">
+    <source src="http://www.archive.org/download/CharlesLindbergTakesOff/CharlesLindbergTakesOff_512kb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+      <source src="http://www.archive.org/download/CharlesLindbergTakesOff/CharlesLindbergTakesOff.ogv" type='video/ogg; codecs="theora, vorbis"'>
+  </video>
+  <audio preload>
+    <source src="indiana.ogg">
+    <source src="indiana.mp3">
+  </audio>
+  </div>
+  <footer>Written by Chris Heilmann, powered by HTML5 awesome, Google Maps and Archive.org</footer>
+  </div>
+  <script src="spirit.js"></script>
+</body>
+</html>

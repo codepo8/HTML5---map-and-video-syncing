@@ -1,0 +1,125 @@
+html,body{
+  background:#cc9;
+  overflow:hidden;
+}
+#boundary{
+  width:500px;
+  margin:0 auto;
+  position:relative;
+}
+#stage,video,#mapcanvas{
+  width:500px;
+  height:375px;
+  position:relative;
+  margin:0 auto;
+  display:block;
+}
+#stage{
+  margin-top:150px;
+  -moz-box-shadow:4px 4px 10px rgba(0,0,0,.7);
+}
+#mapcanvas{
+  opacity:0;
+}
+video,#credits{
+  position:absolute;
+  top:0;
+  left:0;
+}
+#credits{
+  width:500px;
+  height:375px;
+  overflow:hidden;
+  background:#000;
+  background:rgba(0,0,0,.9);
+  color:#fff;
+  font-color:#fff;
+  font-family:helvetica,arial,sans-serif;
+  z-index:10;
+  display:none;
+}
+#credits ul{
+  margin:400px 0 0 0;
+  padding:0;
+  list-style:none;
+}
+#credits li{
+  margin:0;
+  padding:0;
+  list-style:none;
+  overflow:hidden;
+  font-size:18px;
+  padding-bottom:1em;
+}
+#credits li.last{
+  text-align:center;
+  font-size:25px;
+  margin-top:150px;
+  text-transform:uppercase;
+}
+#credits li span{
+  float:left;
+  width:48%;
+}
+#credits li span.j{
+  text-align:right;
+  font-weight:bold;
+  padding-right:1em;
+}
+#stage button{
+  clear:both;
+  z-index:100;
+  margin:1em auto;
+  display:block;
+  font-family:lobster,sans-serif;
+  border:none;
+  float:right;
+  font-size:30px;
+  background:transparent;
+  color:#330;
+  text-shadow:0 0 .3em white;
+}
+#stage button:hover{
+  color:#663;
+  cursor:pointer;
+}
+#stage span.drm{
+  z-index:100;
+  display:none;
+  font-family:lobster,sans-serif;
+  font-size:25px;
+  background:transparent;
+  color:#000;
+  position:absolute;
+  top:30px;
+  right:20px;
+  -webkit-transform: rotate(20deg); 
+  -moz-transform: rotate(20deg);
+}
+
+h1 {
+  font-family: 'Lobster', serif;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.87em;
+  -webkit-transform: rotate(-30deg); 
+  -moz-transform: rotate(-30deg);
+  text-shadow:0 0 .3em white;
+  color:#333;
+  z-index:20;
+  position:absolute;
+  top:-120px;
+  left:-100px;
+  float:left;
+}
+h1 span{display:block;}
+footer{
+  font-size:9px;
+  font-family:arial,sans-serif;
+  color:#666;
+  text-align:center;
+  margin:5em 0;
+  clear:both;
+  display:block;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Video Demo</title>
+<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+<link  href="http://fonts.googleapis.com/css?family=Lobster:regular" rel="stylesheet" type="text/css">
+<style type="text/css" media="screen">
+html,body{
+  background:#cc9;
+  overflow:hidden;
+}
+#boundary{
+  width:500px;
+  margin:0 auto;
+  position:relative;
+}
+#stage,video,#mapcanvas{
+  width:500px;
+  height:375px;
+  margin:0 auto;
+  display:block;
+}
+#stage{
+  position:relative;
+  margin-top:150px;
+  -moz-box-shadow:4px 4px 10px rgba(0,0,0,.7);
+}
+#mapcanvas{
+  opacity:0;
+}
+video,#credits{
+  position:absolute;
+  top:0;
+  left:0;
+}
+#stage button{
+  margin:1em auto 1em auto;
+  display:block;
+  font-family:lobster,sans-serif;
+  border:none;
+  font-size:30px;
+  background:transparent;
+  color:#330;
+  text-shadow:0 0 .3em white;
+  position:absolute;
+  bottom:-80px;
+  right:0;
+}
+#stage button:hover{
+  color:#663;
+  cursor:pointer;
+}
+h1 {
+  font-family: 'Lobster', serif;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.87em;
+  -webkit-transform: rotate(-30deg); 
+  -moz-transform: rotate(-30deg);
+  text-shadow:0 0 .3em white;
+  color:#333;
+  z-index:20;
+  position:absolute;
+  top:-120px;
+  left:-100px;
+  float:left;
+}
+h1 span{display:block;}
+footer{
+  font-size:9px;
+  font-family:arial,sans-serif;
+  color:#666;
+  text-align:center;
+  margin:7em 0;
+  clear:both;
+  display:block;
+}  
+</style>
+</head>
+<body>
+  <div id="boundary">
+  <header><h1>Video Demo</h1></header>
+  <div id="stage">
+  <video>
+    <source src="http://www.archive.org/download/CharlesLindbergTakesOff/CharlesLindbergTakesOff_512kb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="http://www.archive.org/download/CharlesLindbergTakesOff/CharlesLindbergTakesOff.ogv" type='video/ogg; codecs="theora, vorbis"'> 
+  </video>
+  </div>
+  <footer>Written by Chris Heilmann, powered by HTML5 awesome and Archive.org</footer>
+  </div>
+  <script>
+    window.addEventListener('load', 
+      function() {
+        var stage = document.getElementById('stage');
+        var v = document.getElementsByTagName('video')[0];
+        but = document.createElement('button');
+        but.innerHTML = 'Click to see Lindbergh\'s flight';
+        stage.appendChild(but);
+        but.addEventListener('click',function(e) {
+          v.play();
+          e.preventDefault();
+        },false);
+      }, 
+    false);  
+    
+  </script>
+</body>
+</html>
