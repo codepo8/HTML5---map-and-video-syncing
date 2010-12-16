@@ -1,0 +1,12 @@
+This is a small demo showing how you can sync video and a map using HTML5 and a wee bit of JavaScript. 
+
+There's a full explanation on the Mozilla hacks blog:
+
+http://hacks.mozilla.org/2010/12/spirit-of-indiana-jones-syncing-html5-video-with-maps
+
+This can be improved a lot and I might do so soon:
+
+- Open Street Map instead of Google
+- Static map and Canvas path instead of Google maps
+- Curved path
+... (insert your idea here)
