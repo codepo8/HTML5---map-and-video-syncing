@@ -2,6 +2,9 @@ html,body{
   background:#cc9;
   overflow:hidden;
 }
+header,footer,article,section{
+  display:block;
+}
 #boundary{
   width:500px;
   margin:0 auto;
@@ -17,6 +20,8 @@ html,body{
 #stage{
   margin-top:150px;
   -moz-box-shadow:4px 4px 10px rgba(0,0,0,.7);
+  -webkit-box-shadow:4px 4px 10px rgba(0,0,0,.7);
+  box-shadow:4px 4px 10px rgba(0,0,0,.7);
 }
 #mapcanvas{
   opacity:0;
@@ -95,6 +100,7 @@ video,#credits{
   right:20px;
   -webkit-transform: rotate(20deg); 
   -moz-transform: rotate(20deg);
+  transform: rotate(20deg); 
 }
 
 h1 {
@@ -105,6 +111,7 @@ h1 {
   line-height: 0.87em;
   -webkit-transform: rotate(-30deg); 
   -moz-transform: rotate(-30deg);
+  transform: rotate(-30deg);
   text-shadow:0 0 .3em white;
   color:#333;
   z-index:20;

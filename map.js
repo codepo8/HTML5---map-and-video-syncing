@@ -44,14 +44,11 @@
          pos = [],
          addx = (end[0] - start[0]) / amount,
          addy = (end[1] - start[1]) / amount,
-         i,now,full,path;
+         i,full,path;
         
 /* Calculate the points and seed the array */        
     for(i=animationstart;i<animationend;i++){
-      pos[i] = new google.maps.LatLng(
-                                       start[0] += addx,
-                                       start[1] += addy
-                                     );
+      pos[i] = new google.maps.LatLng(start[0] += addx,start[1] += addy);
     }
 
 /* Once all tiles have loaded, start the animation */
@@ -63,18 +60,18 @@
     spirit.draw = function(){
       var path = new google.maps.Polyline({
             path: [startpos,pos[now]],
-            strokeColor: "#c00",
-            strokeOpacity: .7,
-            strokeWeight: 10
+            strokeColor:'#c00',
+            strokeOpacity:0.7,
+            strokeWeight:10
       });
       path.setMap(map);
-      map.panTo(pos[now])
+      map.panTo(pos[now]);
       now = now + 1;
       if(now < animationend-1){
         setTimeout(spirit.draw,200);
       }
-    }
-  }
+    };
+  };
   
 /* Create the map when the page is done */  
   window.addEventListener('load',function(){

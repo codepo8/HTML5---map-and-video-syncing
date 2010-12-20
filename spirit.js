@@ -26,7 +26,7 @@ spirit.initialize = function() {
   
 /* Define the start and endpoint of the path animation and draw map */
   var start = [40.743529, -73.611844],
-      end = [48.8566667, 2.3509871]
+      end = [48.8566667, 2.3509871],
       startpos = new google.maps.LatLng(start[0],start[1]),
       endpos = new google.maps.LatLng(end[0],end[1]),
       map = new google.maps.Map(
@@ -55,14 +55,14 @@ spirit.initialize = function() {
   needed steps in th path animation.
 */  
   var animationstart = 21,
-      animationend = parseInt(v.duration)+1,
+      animationend = parseInt(v.duration,10)+1,
       amount = animationend - animationstart,
       pos = [],
       addx = (end[0] - start[0]) / amount,
       addy = (end[1] - start[1]) / amount;
   
 /* Create an array of location points in between start and end */    
-  for(var i = animationstart; i < animationend; i++) {
+  for(i = animationstart; i < animationend; i++) {
     pos[i] = new google.maps.LatLng(
                                      start[0] += addx,
                                      start[1] += addy
@@ -79,7 +79,7 @@ v.currentTime = 7;
     if(played === false){
 
 /* Create a button to start the video */
-      but = document.createElement('button');
+      var but = document.createElement('button');
       but.innerHTML = 'Click to see Lindbergh\'s flight';
       but.addEventListener('click',function(e){
         v.currentTime = 7;
@@ -93,7 +93,7 @@ v.currentTime = 7;
 /* Loop the song... */
       a.addEventListener('ended', function(o) {
         a.currentTime = 0;
-      },false)
+      },false);
 
 /* 
    Once the video has finished, stop the audio, remove the button 
@@ -103,21 +103,21 @@ v.currentTime = 7;
         a.pause();
         spirit.credslist.parentNode.style.display = 'block';
         spirit.creds();
-      },false)
+      },false);
 
 /* When the timestamp has changed... (this fires a lot!) */ 
       v.addEventListener('timeupdate',function(o){
 
 /* execute every second rather than fraction of second */
-        full = parseInt(v.currentTime);
+        full = parseInt(v.currentTime,10);
 
 /* 
   If the time is the right to start the animation, change map and video
   opacity to show both...
 */
         if(full === now-1){
-          mapelm.style.opacity = .8;
-          v.style.opacity = .4;
+          mapelm.style.opacity = 0.8;
+          v.style.opacity = 0.4;
         }
 
 /* If the animation started, play the music*/
@@ -144,12 +144,12 @@ v.currentTime = 7;
         if(full >= now) {
           path = new google.maps.Polyline({
               path: [startpos,pos[full]],
-              strokeColor: "#c00",
-              strokeOpacity: .7,
-              strokeWeight: 10
+              strokeColor:'#c00',
+              strokeOpacity:0.7,
+              strokeWeight:10
           });
           path.setMap(map);
-          map.panTo(pos[full])
+          map.panTo(pos[full]);
           now = now + 1;
         }
 
@@ -159,7 +159,7 @@ v.currentTime = 7;
       played = true;
     }
   });
-}
+};
 
 /* 
   Very rough and ready animation of the credits 
